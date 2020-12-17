@@ -1,0 +1,7 @@
+input[type=text]:focus.valid {
+    border-color: green;
+}
+
+input[type=text]:focus.invalid {
+    border-color: red;
+}
