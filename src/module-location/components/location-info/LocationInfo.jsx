@@ -12,7 +12,7 @@ const LocationInfo = ({ ipLocation }) => {
         <div>{error.info}</div>
       ) : (
         data && (
-          <ul className='list-group list-group-flush locinfo-list'>
+          <ul className='list-group list-group-flush location-info-list'>
             <li className='list-group-item'>IP: {data.ip}</li>
             <li className='list-group-item'>
               Continent: {data.continent_name}

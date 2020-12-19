@@ -5,3 +5,7 @@ input[type=text]:focus.valid {
 input[type=text]:focus.invalid {
     border-color: red;
 }
+
+.search-form-input {
+    width: 100%;
+}

@@ -1,5 +1,5 @@
 import { SearchActionTypes } from "./search-types";
-import { getIpLookup } from '../../module-location/api/ipstack-api'
+import { getIpLookup } from '../../api/ipstack-api'
 import { updateHistory } from '../history/history-actions'
 
 export const getSearchIp = (ip) => async (dispatch, getState) => {
@@ -8,7 +8,6 @@ export const getSearchIp = (ip) => async (dispatch, getState) => {
 
     await getIpLookup(ip)
         .then((response) => {
-
 
             if (response.data.success === false) {
                 dispatch({

@@ -1,4 +1,4 @@
-import HttpService from '../../services/httpService'
+import HttpService from '../services/httpService'
 
 export const getIpLookup = (ip = 'check', accesKey = process.env.REACT_APP_IPSTACK_KEY) => {
     return new Promise((resolve, reject) => {

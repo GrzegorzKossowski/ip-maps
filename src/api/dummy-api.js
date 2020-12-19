@@ -1,4 +1,4 @@
-import config from '../../config/config'
+import config from '../config/config'
 
 export const getIpLookup = (ip = 'check') => {
     return new Promise((resolve, reject) => {

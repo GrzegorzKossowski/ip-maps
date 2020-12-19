@@ -5,6 +5,7 @@ const HistoryEntity = ({el}) => {
 
   return (
     <li
+      className='list-group-item'
       key={el.id}
       onClick={() => setIsDisplayed(!isDisplayed)}
       style={{ userSelect: "none", cursor: "pointer" }}
@@ -14,8 +15,7 @@ const HistoryEntity = ({el}) => {
         &#123; &hellip; &#125;
       </small>
       <div style={{ display: `${isDisplayed ? "block" : "none"}` }}>
-        &lfloor; {el.continent_name} | {el.country_name} |{" "}
-        {el.location.capital}
+        &lfloor; {el.continent_name} | {el.country_name} | {el.location.capital}
       </div>
     </li>
   );

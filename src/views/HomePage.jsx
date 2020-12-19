@@ -20,31 +20,32 @@ const HomePage = () => {
   }, [dispatch]);
 
   return (
-    <div className='container border main'>
-      <div className='row border' style={{ height: "100%" }}>
-        <div className='col-md-3 border order-md-0 order-1'>
+    <div className='container main'>
+      <div className='row' style={{ height: "100%" }}>
+        <div className='col-md-3 border order-md-0 order-1 my-3 my-md-0' style={{overflow: 'auto'}}>
           <History />
         </div>
         <div className='col-md-9 order-md-1 order-0'>
           <div className='container'>
             <div className='row'>
-              <div className='col border'>
+              <div className='col-md-6 order-md-0 order-1 '>
                 <Map ipLocation={userLocation} />
               </div>
-              <div className='col border'>
+              <div className='col-md-6 order-md-1 order-0 '>
+                <h3>Your current IP location</h3>
                 <LocationInfo ipLocation={userLocation} />
               </div>
             </div>
-            <div className='row'>
-              <div className='col border'>
+            <div className='row py-3'>
+              <div className='col-lg-6 offset-lg-3'>
                 <SearchForm />
               </div>
             </div>
             <div className='row'>
-              <div className='col border'>
+              <div className='col-md-6 order-md-0 order-1'>
                 <Map ipLocation={searchLocation} />
               </div>
-              <div className='col border'>
+              <div className='col-md-6 order-md-1 order-0'>
                 <LocationInfo ipLocation={searchLocation} />
               </div>
             </div>

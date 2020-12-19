@@ -1,7 +1,6 @@
 import { LocationActionTypes } from './location-types'
-// import { getIpLookup } from '../../api/ipstack-api'
-// import { getIpLookup } from '../../module-location/api/dummy-api'
-import { getIpLookup } from '../../module-location/api/ipstack-api'
+// import { getIpLookup } from '../../api/dummy-api'
+import { getIpLookup } from '../../api/ipstack-api'
 
 export const getUserIp = (ip = 'check') => async (dispatch, getState) => {
 

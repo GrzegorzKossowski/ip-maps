@@ -20,8 +20,10 @@ const SearchForm = () => {
     const val = e.target.value;
     setSearchedIp(val);
 
-    // uncomment to validate only IP numbers
     /*
+    // uncomment to validate only IP numbers
+    // change initialValid.validate to false
+    
     const ipRGEX = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
     if (val !== "" && ipRGEX.test(val)) {
       console.log("valid");
@@ -44,10 +46,13 @@ const SearchForm = () => {
   };
 
   return (
-    <form onSubmit={submitHandler} className='d-flex align-items-baseline'>
-      <div>
+    <form
+      onSubmit={submitHandler}
+      className='d-flex align-items-baseline justify-content-evenly'
+    >
+      <div className=''>
         <input
-          className={isIpValid ? "valid" : "invalid"}
+          className={`search-form-input ${isIpValid ? "valid" : "invalid"}`}
           type='text'
           value={searchedIp}
           onChange={handleChange}
