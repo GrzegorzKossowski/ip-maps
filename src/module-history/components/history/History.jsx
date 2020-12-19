@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { Collapse } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
+import HistoryEntity from "../history-entity/HistoryEntity";
 
 const History = () => {
-  const [isDisplayed, setIsDisplayed] = useState(false);
+  
   const { loading, error, data } = useSelector((state) => state.history);
 
   return (
@@ -16,22 +16,7 @@ const History = () => {
         data && (
           <ul className='list-group list-group-flush locinfo-list'>
             {data.map((el) => (
-              <li
-                key={el.id}
-                onClick={() => setIsDisplayed(!isDisplayed)}
-                style={{ userSelect: "none", cursor: "pointer" }}
-              >
-                {el.ip}{" "}
-                <small
-                  style={{ display: `${isDisplayed ? "none" : "inline"}` }}
-                >
-                  &#123; &hellip; &#125;
-                </small>
-                <div style={{ display: `${isDisplayed ? "block" : "none"}` }}>
-                  &lfloor; {el.continent_name} | {el.country_name} |{" "}
-                  {el.location.capital}
-                </div>
-              </li>
+              <HistoryEntity key={el.id} el={el} />
             ))}
           </ul>
         )

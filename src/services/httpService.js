@@ -88,6 +88,7 @@ class HttpService {
             })
             .catch(error => {
                 options.onError(error.response)
+                // options.onError(error)
             })
 
 

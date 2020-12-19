@@ -8,16 +8,49 @@ export const getSearchIp = (ip) => async (dispatch, getState) => {
 
     await getIpLookup(ip)
         .then((response) => {
-            dispatch({
-                type: SearchActionTypes.SEARCH_IP_SUCCESS,
-                payload: response.data
-            })
-            dispatch(updateHistory(response.data))
+
+
+            if (response.data.success === false) {
+                dispatch({
+                    type: SearchActionTypes.SEARCH_IP_FAIL,
+                    payload: response.data.error
+                })
+            } else {
+                dispatch({
+                    type: SearchActionTypes.SEARCH_IP_SUCCESS,
+                    payload: response.data
+                })
+                dispatch(updateHistory(response.data))
+            }
+
+
+            /*
+            const { data } = response
+            if (!data.success) {
+                console.log(data);
+                dispatch({
+                    type: SearchActionTypes.SEARCH_IP_FAIL,
+                    payload: data.error
+                })
+            } else {
+                dispatch({
+                    type: SearchActionTypes.SEARCH_IP_SUCCESS,
+                    payload: data
+                })
+                dispatch(updateHistory(response.data))
+                
+            }
+            */
         })
         .catch(error => {
+            console.log(error);
             dispatch({
                 type: SearchActionTypes.SEARCH_IP_FAIL,
-                payload: error
+                payload: {
+                    "code": 400,
+                    "type": "other_type_error",
+                    "info": `Something went wrong. Try again later.`
+                }
             })
         })
 

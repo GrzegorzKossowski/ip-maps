@@ -8,25 +8,31 @@ export const getUserIp = (ip = 'check') => async (dispatch, getState) => {
     dispatch({ type: LocationActionTypes.LOCATION_IP_REQUEST })
 
     await getIpLookup(ip)
-        .then((response) => dispatch({
-            type: LocationActionTypes.LOCATION_IP_SUCCESS,
-            payload: response.data
-        }))
+        .then((response) => {
+
+            if (response.data.success === false) {
+                console.log(response.data.error);
+                dispatch({
+                    type: LocationActionTypes.LOCATION_IP_FAIL,
+                    payload: response.data.error
+                })
+            } else {
+                dispatch({
+                    type: LocationActionTypes.LOCATION_IP_SUCCESS,
+                    payload: response.data
+                })
+            }
+
+        })
         .catch(error => dispatch({
             type: LocationActionTypes.LOCATION_IP_FAIL,
-            payload: error
+            payload: {
+                "success": false,
+                "error": {
+                    "code": 400,
+                    "type": "other_type_error",
+                    "info": `Something went wrong. Try again later.`
+                }
+            }
         }))
 }
-
-
-        // flatten object for redux
-/*
-const filtered = Object.keys(data)
-.filter(key => key !== 'location')
-.reduce((obj, key) => {
-        obj[key] = data[key]
-        return obj
-    }, {})
-    const location = data.location
-    const flattened = Object.assign({}, { ...filtered }, { ...location })
-    */

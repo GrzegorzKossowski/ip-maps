@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getSearchIp } from "../../../redux/search/search-actions";
 
 import "./search-form.css";
 
 const initialValid = {
-  valid: false,
+  valid: true,
   focused: false,
 };
 
@@ -21,6 +21,7 @@ const SearchForm = () => {
     setSearchedIp(val);
 
     // uncomment to validate only IP numbers
+    /*
     const ipRGEX = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
     if (val !== "" && ipRGEX.test(val)) {
       console.log("valid");
@@ -29,13 +30,12 @@ const SearchForm = () => {
       console.log("invalid");
       setIsIpValid({ ...isIpValid, valid: false });
     }
-    /*
-     */
+    */
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("submited");
+
     setSearchedIp("");
     setIsIpValid(initialValid);
     if (isIpValid.valid) {

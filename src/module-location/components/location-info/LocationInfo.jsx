@@ -1,7 +1,5 @@
-import React, { useEffect, useState, useReducer } from "react";
+import React from "react";
 import "./location-info.css";
-
-import { useDispatch, useSelector } from "react-redux";
 
 const LocationInfo = ({ ipLocation }) => {
   const { loading, error, data } = ipLocation;
@@ -11,7 +9,7 @@ const LocationInfo = ({ ipLocation }) => {
       {loading ? (
         <div>loading</div>
       ) : error ? (
-        <div>error</div>
+        <div>{error.info}</div>
       ) : (
         data && (
           <ul className='list-group list-group-flush locinfo-list'>

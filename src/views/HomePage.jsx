@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import LocationInfo from "../module-location/components/location-info/LocationInfo";
 import Map from "../module-maps/components/Map";
 import History from "../module-history/components/history/History";
@@ -22,10 +22,10 @@ const HomePage = () => {
   return (
     <div className='container border main'>
       <div className='row border' style={{ height: "100%" }}>
-        <div className='col-md-3 border'>
+        <div className='col-md-3 border order-md-0 order-1'>
           <History />
         </div>
-        <div className='col-md-9'>
+        <div className='col-md-9 order-md-1 order-0'>
           <div className='container'>
             <div className='row'>
               <div className='col border'>

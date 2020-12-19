@@ -1,7 +1,6 @@
 //https://tomchentw.github.io/react-google-maps/#introduction
 import React from "react";
 import GMap from "./google-maps/GMap";
-import { useDispatch, useSelector } from "react-redux";
 
 const Map = ({ ipLocation }) => {
   const { loading, error, data } = ipLocation;
@@ -11,7 +10,7 @@ const Map = ({ ipLocation }) => {
       {loading ? (
         <div>loading</div>
       ) : error ? (
-        <div>error</div>
+        <div>No Map avaiable</div>
       ) : (
         data && (
           <GMap
