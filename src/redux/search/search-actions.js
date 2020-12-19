@@ -22,24 +22,6 @@ export const getSearchIp = (ip) => async (dispatch, getState) => {
                 dispatch(updateHistory(response.data))
             }
 
-
-            /*
-            const { data } = response
-            if (!data.success) {
-                console.log(data);
-                dispatch({
-                    type: SearchActionTypes.SEARCH_IP_FAIL,
-                    payload: data.error
-                })
-            } else {
-                dispatch({
-                    type: SearchActionTypes.SEARCH_IP_SUCCESS,
-                    payload: data
-                })
-                dispatch(updateHistory(response.data))
-                
-            }
-            */
         })
         .catch(error => {
             console.log(error);
