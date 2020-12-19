@@ -10,8 +10,11 @@ const initialValid = {
   focused: false,
 };
 
+/**
+ * Search form component
+ */
 const SearchForm = () => {
-  const [searchedIp, setSearchedIp] = useState("87.206.166.163");
+  const [searchedIp, setSearchedIp] = useState("");
   const [isIpValid, setIsIpValid] = useState(initialValid);
 
   const dispatch = useDispatch();
@@ -57,6 +60,7 @@ const SearchForm = () => {
           value={searchedIp}
           onChange={handleChange}
           onFocus={() => setIsIpValid({ ...isIpValid, focused: true })}
+          placeholder="ipv4, ipv6 or domain name"
         />
         {!isIpValid && (
           <div>

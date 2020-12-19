@@ -1,11 +1,31 @@
 # ReactJS ip to map SPA
 
-🚧 under development 🚧
+~~🚧 under development 🚧~~
+
+[![IP 2 Map](/img/ip-map.jpg)](https://youtu.be/I_HUWmCNniU)
+click picture above or go directly to [YT: ReactJS ip to map SPA](https://youtu.be/pzV3ptz9Nt8)
+
+## NOTE
+
+Due to CORS policy there's no possibility to deploy app on heroku https server and use ipstock http free plan.
+
+Due to MPSP (my personal secure policy) there's no possibility I would share with you my private ipstock secret key 🤪
+
+To run app on your local machine you should:
+- obtain free API KEY here -> ​ https://ipstack.com/signup/free
+- clone app ```git clone git@github.com:GrzegorzKossowski/ip-maps.git```
+- create .env or  .env.local file in root directory (important!)
+- set your local variable
+```
+REACT_APP_IPSTACK_KEY=your-ipstock-secret-key-here
+```
+- run ```npm start```
+
+# Design requirements
 
 ## Summary
 
-The aim of this task is to build simple web application. The application should display location of provided IP
-address or URL on map.
+The aim of this task is to build simple web application. The application should display location of provided IP address or URL on map.
 
 ## Application specification
 

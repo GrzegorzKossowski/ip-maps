@@ -2,6 +2,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 import HistoryEntity from "../history-entity/HistoryEntity";
 
+/**
+ * History list main component. Shows history of ip requests
+ */
 const History = () => {
   const { loading, error, data } = useSelector((state) => state.history);
 
