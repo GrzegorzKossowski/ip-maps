@@ -22,6 +22,7 @@ To run app on your local machine you should:
 REACT_APP_IPSTACK_KEY=your-ipstock-secret-key-here
 ```
 
+- install dependencies `npm i`
 - run `npm start`
 
 # Design requirements
